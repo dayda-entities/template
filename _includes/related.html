@@ -1,8 +1,8 @@
 
-{%- if page.content-type == "resources" -%}
+{%- if page.content-type == "notes" -%}
 {%- assign sameTagCount = 0 -%}
 {%- assign minCommonTags =  1 -%}
-{%- for note in site.resources -%}
+{%- for note in site.notes -%}
 {%- assign commonTags = '' -%}
 {%- for tag in note.tags -%}
   {%- if note.url != page.url -%}
@@ -16,12 +16,12 @@
 {%- endfor -%}
 {%- if sameTagCount >= minCommonTags-%}
 <div class="related" id="jekyll-seamless-relatedposts">
-    <h4 class="medium-small">Related resources</h4>
+    <h4 class="medium-small">Related Notes</h4>
     <div class="related-wrapper">
     {%- assign maxRelated = 100 -%}
     {%- assign minCommonTags =  1 -%}
     {%- assign maxRelatedCounter = 0 -%}
-    {%- for note in site.resources -%}
+    {%- for note in site.notes -%}
         {%- assign sameTagCount = 0 -%}
         {%- assign commonTags = '' -%}
         {%- for tag in note.tags -%}
