@@ -34,25 +34,31 @@
         <div class = "box">
             
             {%- include header.html -%}
-            {%- include feed.html -%}
+            
+            <h3>{{ page.title }}</h3>
+            <p>{{ content }} </p>
 
-            <main>
-                <h1>{{page.title}}</h1>
-                {%- include content.html -%}
-                {%- include backlinks.html -%}
-                {%- include related.html -%}
-            </main>
+            <hr>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="text-align: left;">
+                        {% if page.previous.url %}
+                        <a class="prev" href="{{page.previous.url}}">&#8592; Previous</a>
+                        {% endif %}
+                    </td>
+                    <td style="text-align: right;">
+                        {% if page.next.url %}
+                        <a class="next" href="{{page.next.url}}">Next &#8594;</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>            
       
             {%- include footer.html -%}
+            
         </div>
-        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+
     </div>
-    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script>
-        document.getElementById("scroll-to-top").addEventListener("click", function() {
-            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        });
-    </script>
-    {%- include contextmenu.html -%}
 </body>
 </html>
