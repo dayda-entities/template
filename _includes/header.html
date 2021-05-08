@@ -1,3 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Knowledge Continuum" property="og:site_name"/>
+    <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
+    <meta content="{{ site.url }}/about/" property="article:author">
+
+    {%- if page.title -%}
+    <meta content="{{ page.title }}" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+
+    <script type="application/ld+json">
+        {
+          "@context":"https://schema.org/",
+          "@type":"Dataset",
+          "name":"{{ page.title }}",
+          "description":"{{ content | strip_html | strip | escape | truncate: 200}}",
+          "url":"{{ site.url }}{{ page.url }}",
+          "keywords":[{% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+          "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
+          "isAccessibleForFree" : true,
+          "creator":{
+             "@type":"Organization",
+             "url": "{{ site.source_url }},
+             "name":"{{ site.name }}",
+             "contactPoint":{
+                "@type":"ContactPoint",
+                "contactType": "{{ site.source_contact_type }}",
+                "telephone":"{{ site.source_phone }}",
+                "email":"{{ site.source_email }}"
+             }
+          },
+          "includedInDataCatalog":{
+             "@type":"DataCatalog",
+             "name":"{{ site.source_catalog }}"
+          },
+          "distribution":[
+            {%- if page.csv_url != '' -%}   
+             {
+                "@type":"DataDownload",
+                "encodingFormat":"CSV",
+                "contentUrl":"{{ page.csv_url }}"
+             }
+             {%- endif -%}
+             {%- if page.csv_url != '' and  page.json_url != '' -%},{%- endif -%}
+             {%- if page.json_url != '' -%}     
+             {
+                "@type":"DataDownload",
+                "encodingFormat":"JSON",
+                "contentUrl":"{{ page.json_url }}"
+             }
+             {%- endif -%}
+          ]
+        }
+        </script>
+
+    {%- else -%}
+    <meta content="website" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- endif -%}
+
+    <title>{{site.title}}</title>
+
+    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
+    <link rel="apple-touch-icon" href="{{site.profile_pic}}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="{{site.favicon}}" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/styles.css" rel="stylesheet" media="all"/>
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box">
+            
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
@@ -39,20 +117,20 @@
             </a>
         </div>
         <div class="rss">
-            <a style="text-decoration: none;" href="/feed.xml">
+            <a style="text-decoration: none;" href="/atom.xml">
                 <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>    
-            <p class="rss-p">RSS</p>
+            <p class="rss-p">Feed</p>
             </a>
         </div>
     </div>
     <div class="searchbar search-container">
         <i class="fa fa-search" aria-hidden="true"></i>
         <label for="search-input"></label>
-        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search Simply Jekyll..."/>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search Datasets"/>
         <ul id="results-container"></ul>
     </div>
     <script src="/assets/js/simple-jekyll-search.min.js"></script>
