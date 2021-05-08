@@ -4,72 +4,50 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
-
-    {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="SAFARI 2000 Modeled Tropospheric Air Mass Trajectories, Dry Season 2000" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="http://localhost:4000/2020/11/12/safari-2000-modeled-tropospheric-air-mass-trajectories-dry-season-2000.html" property="og:url">
 
     <script type="application/ld+json">
         {
           "@context":"https://schema.org/",
           "@type":"Dataset",
-          "name":"{{ page.title }}",
-          "description":"{{ content | strip_html | strip | escape | truncate: 200}}",
-          "url":"{{ site.url }}{{ page.url }}",
-          "keywords":[{% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+          "name":"SAFARI 2000 Modeled Tropospheric Air Mass Trajectories, Dry Season 2000",
+          "description":"The ETA Forecast Trajectory Model was used to produce forecasts of air-parcel trajectories twice a day at three pressure levels over seven sites in Southern Africa for the period August 14, 2000 to...",
+          "url":"http://localhost:4000/2020/11/12/safari-2000-modeled-tropospheric-air-mass-trajectories-dry-season-2000.html",
+          "keywords":["Atmosphere","Atmospheric Winds","Earth Science"],
           "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
           "isAccessibleForFree" : true,
           "creator":{
              "@type":"Organization",
-             "url": "{{ site.source_url }},
-             "name":"{{ site.name }}",
+             "url": "http://example.com,
+             "name":"Template",
              "contactPoint":{
                 "@type":"ContactPoint",
-                "contactType": "{{ site.source_contact_type }}",
-                "telephone":"{{ site.source_phone }}",
-                "email":"{{ site.source_email }}"
+                "contactType": "general",
+                "telephone":"+1 555-555-5555",
+                "email":"info@example.com"
              }
           },
           "includedInDataCatalog":{
              "@type":"DataCatalog",
-             "name":"{{ site.source_catalog }}"
+             "name":"data.gov"
           },
-          "distribution":[
-            {%- if page.csv_url != '' -%}   
-             {
+          "distribution":[{
                 "@type":"DataDownload",
                 "encodingFormat":"CSV",
-                "contentUrl":"{{ page.csv_url }}"
-             }
-             {%- endif -%}
-             {%- if page.csv_url != '' and  page.json_url != '' -%},{%- endif -%}
-             {%- if page.json_url != '' -%}     
-             {
-                "@type":"DataDownload",
-                "encodingFormat":"JSON",
-                "contentUrl":"{{ page.json_url }}"
-             }
-             {%- endif -%}
-          ]
+                "contentUrl":"https://daac.ornl.gov/daacdata/safari2k/climate_meteorology/trajectory_images/comp/synoptic_data.csv"
+             }]
         }
-        </script>
+        </script><title>Dayda</title>
 
-    {%- else -%}
-    <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- endif -%}
-
-    <title>{{site.title}}</title>
-
-    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    <link rel="apple-touch-icon" href="{{site.profile_pic}}">
+    <link rel="canonical" href="http://localhost:4000/2020/11/12/safari-2000-modeled-tropospheric-air-mass-trajectories-dry-season-2000.html"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <link rel="icon" href="{{site.favicon}}" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
     <link href="/assets/css/styles.css" rel="stylesheet" media="all"/>
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml">
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:4000/atom.xml">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5G2EPT7QM"></script>
@@ -90,20 +68,20 @@
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
-           <h4 class="medium"><a href="/">{{site.title}}</a></h4>
+           <h4 class="medium"><a href="/">Dayda</a></h4>
         </div>
         <div class="userboard profile-board-col">
             <div class="username">
-                <p class="title-sans"><a href="/about" style="text-decoration: none;">{{site.name}}</a></p>
+                <p class="title-sans"><a href="/about" style="text-decoration: none;">Template</a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">{{site.user_description}}</p>
+                <p class="title-sans"></p>
             </div> 
         </div>
     </div>
     <div class="avatar disable-select" title="click me to know more">
         <a class="avatar-link" href="/about">
-            <img src="{{ site.profile_pic }}" class="avatar-img" alt="avatar"/>
+            <img src="/assets/img/profile.png" class="avatar-img" alt="avatar"/>
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
@@ -163,10 +141,47 @@
                     searchInput: document.getElementById('search-input'),
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
-                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="http://localhost:4000{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
                     noResultsText: 'No results found',
                     fuzzy: false,
                     limit: 4
                     })   
     </script>
 </header>
+<h3>SAFARI 2000 Modeled Tropospheric Air Mass Trajectories, Dry Season 2000</h3>
+<p><p>The ETA Forecast Trajectory Model was used to produce forecasts of air-parcel trajectories twice a day at three pressure levels over seven sites in Southern Africa for the period August 14, 2000 to September 23, 2000. These sites are Durban, Middleburg, Pietersburg, and Springbok, South Africa; Maun, Botswana; Mongu, Zambia; and Windhoek, Namibia. The twice daily three-dimensional wind field (at 0000 and 1200 UTC) was used as input to the trajectory model. By integrating the vertical motion of the air parcels over a period of time, the trajectory model was able to forecast the net vertical displacement of air parcels during 12-hour periods. The resulting trajectory plots represent the three-dimensional transport of air in time and can be used to examine what is happening in the low-to-mid troposphere during flight and ground-based observations. These levels are most significant in terms of the thermodynamic structure of the troposphere, especially the stable layers and accumulation of material between and below them, as well containing the major levels of subsidence over the subcontinent. The trajectory model output and  thermodynamic profiles of the troposphere were used to position aircraft for sampling trace gases, aerosols and other species during the SAFARI 2000 field campaign and to predict regions of high aerosol and trace gas concentrations downwind.The model output data are daily forward and backward trajectory plots at 850 hPa, 700 hPa, and 500 hPa pressure levels for each location. The plots are provided as JPEG images with coordinate, date, and time stamps.</p>
+ </p>
+<p><strong>Tags:</strong> Atmosphere,Atmospheric Winds,Earth Science</p>
+<center><p><a href="https://daac.ornl.gov/daacdata/safari2k/climate_meteorology/trajectory_images/comp/synoptic_data.csv">&#8614; CSV Download</a></p>
+</center>
+<hr>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Dayda Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0202072258759210"
+     data-ad-slot="1512400134"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<hr>
+<table style="width: 100%;">
+    <tr>
+        <td style="text-align: left;">
+            
+            <a class="prev" href="/2020/11/12/safari-2000-global-burned-area-map-1-km-southern-africa-2000.html">&#8592; Previous</a>
+            
+        </td>
+        <td style="text-align: right;">
+            
+            <a class="next" href="/2020/11/12/soil-organic-carbon-stock-estimates-with-uncertainty-across-latin-america.html">Next &#8594;</a>
+            
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+</body>
+</html>

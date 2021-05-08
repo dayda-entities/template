@@ -4,72 +4,16 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="website" property="og:type">
+    <meta content="http://localhost:4000/page8/" property="og:url"><title>Dayda</title>
 
-    {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title">
-    <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-
-    <script type="application/ld+json">
-        {
-          "@context":"https://schema.org/",
-          "@type":"Dataset",
-          "name":"{{ page.title }}",
-          "description":"{{ content | strip_html | strip | escape | truncate: 200}}",
-          "url":"{{ site.url }}{{ page.url }}",
-          "keywords":[{% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
-          "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
-          "isAccessibleForFree" : true,
-          "creator":{
-             "@type":"Organization",
-             "url": "{{ site.source_url }},
-             "name":"{{ site.name }}",
-             "contactPoint":{
-                "@type":"ContactPoint",
-                "contactType": "{{ site.source_contact_type }}",
-                "telephone":"{{ site.source_phone }}",
-                "email":"{{ site.source_email }}"
-             }
-          },
-          "includedInDataCatalog":{
-             "@type":"DataCatalog",
-             "name":"{{ site.source_catalog }}"
-          },
-          "distribution":[
-            {%- if page.csv_url != '' -%}   
-             {
-                "@type":"DataDownload",
-                "encodingFormat":"CSV",
-                "contentUrl":"{{ page.csv_url }}"
-             }
-             {%- endif -%}
-             {%- if page.csv_url != '' and  page.json_url != '' -%},{%- endif -%}
-             {%- if page.json_url != '' -%}     
-             {
-                "@type":"DataDownload",
-                "encodingFormat":"JSON",
-                "contentUrl":"{{ page.json_url }}"
-             }
-             {%- endif -%}
-          ]
-        }
-        </script>
-
-    {%- else -%}
-    <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- endif -%}
-
-    <title>{{site.title}}</title>
-
-    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    <link rel="apple-touch-icon" href="{{site.profile_pic}}">
+    <link rel="canonical" href="http://localhost:4000/page8/"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <link rel="icon" href="{{site.favicon}}" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
     <link href="/assets/css/styles.css" rel="stylesheet" media="all"/>
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml">
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:4000/atom.xml">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5G2EPT7QM"></script>
@@ -90,20 +34,20 @@
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
-           <h4 class="medium"><a href="/">{{site.title}}</a></h4>
+           <h4 class="medium"><a href="/">Dayda</a></h4>
         </div>
         <div class="userboard profile-board-col">
             <div class="username">
-                <p class="title-sans"><a href="/about" style="text-decoration: none;">{{site.name}}</a></p>
+                <p class="title-sans"><a href="/about" style="text-decoration: none;">Template</a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">{{site.user_description}}</p>
+                <p class="title-sans"></p>
             </div> 
         </div>
     </div>
     <div class="avatar disable-select" title="click me to know more">
         <a class="avatar-link" href="/about">
-            <img src="{{ site.profile_pic }}" class="avatar-img" alt="avatar"/>
+            <img src="/assets/img/profile.png" class="avatar-img" alt="avatar"/>
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
@@ -163,10 +107,63 @@
                     searchInput: document.getElementById('search-input'),
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
-                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="http://localhost:4000{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
                     noResultsText: 'No results found',
                     fuzzy: false,
                     limit: 4
                     })   
     </script>
 </header>
+
+    <div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/2020/11/12/a-e-geod-50881-gene-chip-assay-candida-albicans-response-to-spaceflight-nasa-sts-115.html">
+        <a href="/2020/11/12/a-e-geod-50881-gene-chip-assay-candida-albicans-response-to-spaceflight-nasa-sts-115.html" style="text-decoration: none; color: #555555;">
+        <p class="feed-title">A E- GEOD-50881 Gene Chip Assay --- Candida albicans response to spaceflight (NASA STS-115)</p>
+        <p class="feed-excerpt">https://c3.nasa.gov/genelab/accession/GLDS-20/
+
+This study presents the first global transcriptional profiling and phenotypic characterization of the major human opportunistic fungal pathogen, Cand...</p>
+        </a>
+    </div>
+
+    <div class="feed-title-excerpt-block disable-select" data-url="http://localhost:4000/2020/11/12/a-compilation-of-global-soil-microbial-biomass-carbon-nitrogen-and-phosphorus-data.html">
+        <a href="/2020/11/12/a-compilation-of-global-soil-microbial-biomass-carbon-nitrogen-and-phosphorus-data.html" style="text-decoration: none; color: #555555;">
+        <p class="feed-title">A Compilation of Global Soil Microbial Biomass Carbon, Nitrogen, and Phosphorus Data</p>
+        <p class="feed-excerpt">This data set provides the concentrations of soil microbial biomass carbon (C), nitrogen (N) and phosphorus (P), soil organic carbon, total nitrogen, and total phosphorus at biome and global scales...</p>
+        </a>
+    </div>
+
+<hr>
+<table width="100%" align="center">
+    <tr>
+        <td width="30%" style="text-align:left;">
+            
+                <a href="/page7/" class="previous">
+                Previous
+                </a>
+            
+        </td>
+        <td width="30%" style="text-align:center;">
+            8 of 8
+        </td>
+        <td width="30%" style="text-align:right;">
+            
+                <span class="next ">Next</span>
+            
+        </td>
+    </tr>
+</table>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Dayda Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0202072258759210"
+     data-ad-slot="1512400134"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</body>
+</html>

@@ -4,72 +4,50 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
-
-    {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="SAFARI 2000 Global Burned Area Map, 1-km, Southern Africa, 2000" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="http://localhost:4000/2020/11/12/safari-2000-global-burned-area-map-1-km-southern-africa-2000.html" property="og:url">
 
     <script type="application/ld+json">
         {
           "@context":"https://schema.org/",
           "@type":"Dataset",
-          "name":"{{ page.title }}",
-          "description":"{{ content | strip_html | strip | escape | truncate: 200}}",
-          "url":"{{ site.url }}{{ page.url }}",
-          "keywords":[{% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+          "name":"SAFARI 2000 Global Burned Area Map, 1-km, Southern Africa, 2000",
+          "description":"The Global Burned Area 2000 initiative (GBA2000) was launched by the Global Vegetation Mapping Unit of the Joint Research Centre of the European Commission, in partnership with several other instit...",
+          "url":"http://localhost:4000/2020/11/12/safari-2000-global-burned-area-map-1-km-southern-africa-2000.html",
+          "keywords":["Biosphere","Earth Science","Ecological Dynamics","Environmental Impacts","Human Dimensions","Natural Hazards","Vegetation"],
           "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
           "isAccessibleForFree" : true,
           "creator":{
              "@type":"Organization",
-             "url": "{{ site.source_url }},
-             "name":"{{ site.name }}",
+             "url": "http://example.com,
+             "name":"Template",
              "contactPoint":{
                 "@type":"ContactPoint",
-                "contactType": "{{ site.source_contact_type }}",
-                "telephone":"{{ site.source_phone }}",
-                "email":"{{ site.source_email }}"
+                "contactType": "general",
+                "telephone":"+1 555-555-5555",
+                "email":"info@example.com"
              }
           },
           "includedInDataCatalog":{
              "@type":"DataCatalog",
-             "name":"{{ site.source_catalog }}"
+             "name":"data.gov"
           },
-          "distribution":[
-            {%- if page.csv_url != '' -%}   
-             {
+          "distribution":[{
                 "@type":"DataDownload",
                 "encodingFormat":"CSV",
-                "contentUrl":"{{ page.csv_url }}"
-             }
-             {%- endif -%}
-             {%- if page.csv_url != '' and  page.json_url != '' -%},{%- endif -%}
-             {%- if page.json_url != '' -%}     
-             {
-                "@type":"DataDownload",
-                "encodingFormat":"JSON",
-                "contentUrl":"{{ page.json_url }}"
-             }
-             {%- endif -%}
-          ]
+                "contentUrl":"https://daac.ornl.gov/daacdata/safari2k/remote_sensing/spot_veg_burned/comp/gba2000_country_vegetation_2000.csv"
+             }]
         }
-        </script>
+        </script><title>Dayda</title>
 
-    {%- else -%}
-    <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- endif -%}
-
-    <title>{{site.title}}</title>
-
-    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    <link rel="apple-touch-icon" href="{{site.profile_pic}}">
+    <link rel="canonical" href="http://localhost:4000/2020/11/12/safari-2000-global-burned-area-map-1-km-southern-africa-2000.html"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <link rel="icon" href="{{site.favicon}}" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
     <link href="/assets/css/styles.css" rel="stylesheet" media="all"/>
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml">
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:4000/atom.xml">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5G2EPT7QM"></script>
@@ -90,20 +68,20 @@
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
-           <h4 class="medium"><a href="/">{{site.title}}</a></h4>
+           <h4 class="medium"><a href="/">Dayda</a></h4>
         </div>
         <div class="userboard profile-board-col">
             <div class="username">
-                <p class="title-sans"><a href="/about" style="text-decoration: none;">{{site.name}}</a></p>
+                <p class="title-sans"><a href="/about" style="text-decoration: none;">Template</a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">{{site.user_description}}</p>
+                <p class="title-sans"></p>
             </div> 
         </div>
     </div>
     <div class="avatar disable-select" title="click me to know more">
         <a class="avatar-link" href="/about">
-            <img src="{{ site.profile_pic }}" class="avatar-img" alt="avatar"/>
+            <img src="/assets/img/profile.png" class="avatar-img" alt="avatar"/>
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
@@ -163,10 +141,47 @@
                     searchInput: document.getElementById('search-input'),
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
-                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="http://localhost:4000{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
                     noResultsText: 'No results found',
                     fuzzy: false,
                     limit: 4
                     })   
     </script>
 </header>
+<h3>SAFARI 2000 Global Burned Area Map, 1-km, Southern Africa, 2000</h3>
+<p><p>The Global Burned Area 2000 initiative (GBA2000) was launched by the Global Vegetation Mapping Unit of the Joint Research Centre of the European Commission, in partnership with several other institutions, to develop reliable and quantitative information on the global magnitude and spatial distribution of biomass burning. The objective of GBA2000 was to produce a map of the areas burned globally for the year 2000, using the medium resolution satellite imagery provided by the SPOT-VEGETATION (VGT) system and to derive statistics of area burned per type of vegetation cover. A subset of the global GBA20000 map was prepared for SAFARI 2000 to map the area burned in sub-Saharan Africa during 2000 on a monthly basis using VGT imagery at 1 km spatial resolution. Burned areas were identified with a classification tree, relying only on the near-infrared channel of VGT. The data used in this work are in the S1 daily synthesis format, i.e. the data are radiometrically calibrated, precisely geo-located, and corrected for atmospheric effects.The data are binary image files of area burned, BSQ format in geographic projection.  There is one file for each month of 2000 and one file for all of the year 2000. There is also a comma-delimited ASCII text file that provides geographic coordinates (latitude and longitude) of the center of each pixel indicated as a burned area for all of 2000.</p>
+ </p>
+<p><strong>Tags:</strong> Biosphere,Earth Science,Ecological Dynamics,Environmental Impacts,Human Dimensions,Natural Hazards,Vegetation</p>
+<center><p><a href="https://daac.ornl.gov/daacdata/safari2k/remote_sensing/spot_veg_burned/comp/gba2000_country_vegetation_2000.csv">&#8614; CSV Download</a></p>
+</center>
+<hr>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Dayda Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0202072258759210"
+     data-ad-slot="1512400134"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<hr>
+<table style="width: 100%;">
+    <tr>
+        <td style="text-align: left;">
+            
+            <a class="prev" href="/2020/11/12/safari-2000-daily-rainfall-estimates-0.1-deg-southern-africa-1993-2001.html">&#8592; Previous</a>
+            
+        </td>
+        <td style="text-align: right;">
+            
+            <a class="next" href="/2020/11/12/safari-2000-modeled-tropospheric-air-mass-trajectories-dry-season-2000.html">Next &#8594;</a>
+            
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+</body>
+</html>

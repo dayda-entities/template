@@ -4,72 +4,50 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Knowledge Continuum" property="og:site_name"/>
     <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
-
-    {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title">
+    <meta content="http://localhost:4000/about/" property="article:author"><meta content="NACP Site Tower Meteorology, Flux Observations with Uncertainty, and Ancillary Data" property="og:title">
     <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="http://localhost:4000/2020/11/12/nacp-site-tower-meteorology-flux-observations-with-uncertainty-and-ancillary-data.html" property="og:url">
 
     <script type="application/ld+json">
         {
           "@context":"https://schema.org/",
           "@type":"Dataset",
-          "name":"{{ page.title }}",
-          "description":"{{ content | strip_html | strip | escape | truncate: 200}}",
-          "url":"{{ site.url }}{{ page.url }}",
-          "keywords":[{% for tag in page.tags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+          "name":"NACP Site Tower Meteorology, Flux Observations with Uncertainty, and Ancillary Data",
+          "description":"This data set contains meteorological, carbon cycle flux, phenology, and ancillary data measured at 47 eddy covariance flux tower sites across North America. The data were used by North American Ca...",
+          "url":"http://localhost:4000/2020/11/12/nacp-site-tower-meteorology-flux-observations-with-uncertainty-and-ancillary-data.html",
+          "keywords":["Atmosphere","Atmospheric Pressure","Atmospheric Radiation","Atmospheric Temperature","Atmospheric Water Vapor","Atmospheric Winds","Earth Science","Precipitation"],
           "license" : "https://creativecommons.org/publicdomain/zero/1.0/",
           "isAccessibleForFree" : true,
           "creator":{
              "@type":"Organization",
-             "url": "{{ site.source_url }},
-             "name":"{{ site.name }}",
+             "url": "http://example.com,
+             "name":"Template",
              "contactPoint":{
                 "@type":"ContactPoint",
-                "contactType": "{{ site.source_contact_type }}",
-                "telephone":"{{ site.source_phone }}",
-                "email":"{{ site.source_email }}"
+                "contactType": "general",
+                "telephone":"+1 555-555-5555",
+                "email":"info@example.com"
              }
           },
           "includedInDataCatalog":{
              "@type":"DataCatalog",
-             "name":"{{ site.source_catalog }}"
+             "name":"data.gov"
           },
-          "distribution":[
-            {%- if page.csv_url != '' -%}   
-             {
+          "distribution":[{
                 "@type":"DataDownload",
                 "encodingFormat":"CSV",
-                "contentUrl":"{{ page.csv_url }}"
-             }
-             {%- endif -%}
-             {%- if page.csv_url != '' and  page.json_url != '' -%},{%- endif -%}
-             {%- if page.json_url != '' -%}     
-             {
-                "@type":"DataDownload",
-                "encodingFormat":"JSON",
-                "contentUrl":"{{ page.json_url }}"
-             }
-             {%- endif -%}
-          ]
+                "contentUrl":"https://daac.ornl.gov/daacdata/nacp/NACP_Site_Tower_Met_and_Flux//comp/Soil_texture_summary.csv"
+             }]
         }
-        </script>
+        </script><title>Dayda</title>
 
-    {%- else -%}
-    <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- endif -%}
-
-    <title>{{site.title}}</title>
-
-    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
-    <link rel="apple-touch-icon" href="{{site.profile_pic}}">
+    <link rel="canonical" href="http://localhost:4000/2020/11/12/nacp-site-tower-meteorology-flux-observations-with-uncertainty-and-ancillary-data.html"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 
-    <link rel="icon" href="{{site.favicon}}" type="image/png" sizes="16x16"/>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="16x16"/>
     <link href="/assets/css/styles.css" rel="stylesheet" media="all"/>
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/atom.xml">
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:4000/atom.xml">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5G2EPT7QM"></script>
@@ -90,20 +68,20 @@
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
-           <h4 class="medium"><a href="/">{{site.title}}</a></h4>
+           <h4 class="medium"><a href="/">Dayda</a></h4>
         </div>
         <div class="userboard profile-board-col">
             <div class="username">
-                <p class="title-sans"><a href="/about" style="text-decoration: none;">{{site.name}}</a></p>
+                <p class="title-sans"><a href="/about" style="text-decoration: none;">Template</a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">{{site.user_description}}</p>
+                <p class="title-sans"></p>
             </div> 
         </div>
     </div>
     <div class="avatar disable-select" title="click me to know more">
         <a class="avatar-link" href="/about">
-            <img src="{{ site.profile_pic }}" class="avatar-img" alt="avatar"/>
+            <img src="/assets/img/profile.png" class="avatar-img" alt="avatar"/>
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
@@ -163,10 +141,47 @@
                     searchInput: document.getElementById('search-input'),
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
-                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="http://localhost:4000{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
                     noResultsText: 'No results found',
                     fuzzy: false,
                     limit: 4
                     })   
     </script>
 </header>
+<h3>NACP Site Tower Meteorology, Flux Observations with Uncertainty, and Ancillary Data</h3>
+<p><p>This data set contains meteorological, carbon cycle flux, phenology, and ancillary data measured at 47 eddy covariance flux tower sites across North America. The data were used by North American Carbon Program (NACP) Site-Level Synthesis as model driver data and for assessing how well 24 Terrestrial Biosphere Models simulated carbon processes across vegetation types and environmental conditions.<em>The meteorology data include eight variables: air temperature (K), specific humidity (kg/kg), wind speed (m/s), precipitation (kg/m2/s), surface pressure (Pa), surface incident shortwave radiation (W/m2), surface incident longwave radiation (W/m2), and CO2 concentration (ppm). Gap-filled data were used by modeling teams as input model driver data.</em>Measured fluxes of net ecosystem exchange (NEE) and derived gross primary productivity (GPP) and respiration (R) and respective calculated uncertainty estimates are provided for each tower site at the native time resolution of the observations (30 or 60-minute) as well as the diurnal, seasonal, and annual time scales. The data were gap-filled following a standard protocol. Components of uncertainty include uncertainties resulting from turbulence, gap-filling, flux partitioning, and u* threshold determination. Flux observations and uncertainty data were used to assess how well models simulated carbon processes.<em>Remotely sensed NDVI, LAI, and fPAR phenology data were derived from the GIMMS version g NDVI data set for each flux tower site. Phenology data were used by some modeling teams as input model driver data.</em>Ancillary data and information describe tower location and physical characteristics, disturbance history, and biological and ecological attributes of the vegetation, litter, and soil. These ancillary data were used by modeling teams as input model driver data.The data files are in both ASCII text and NetCDF formats (ALMA standard). The compilation of these data was facilitated by the NACP Modeling and Synthesis Thematic Data Center (MAST-DC).</p>
+ </p>
+<p><strong>Tags:</strong> Atmosphere,Atmospheric Pressure,Atmospheric Radiation,Atmospheric Temperature,Atmospheric Water Vapor,Atmospheric Winds,Earth Science,Precipitation</p>
+<center><p><a href="https://daac.ornl.gov/daacdata/nacp/NACP_Site_Tower_Met_and_Flux//comp/Soil_texture_summary.csv">&#8614; CSV Download</a></p>
+</center>
+<hr>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Dayda Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0202072258759210"
+     data-ad-slot="1512400134"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<hr>
+<table style="width: 100%;">
+    <tr>
+        <td style="text-align: left;">
+            
+            <a class="prev" href="/2020/11/12/nacp-mci-tower-atmospheric-co2-concentrations-upper-midwest-region-usa-2007-2009.html">&#8592; Previous</a>
+            
+        </td>
+        <td style="text-align: right;">
+            
+            <a class="next" href="/2020/11/12/nasa-disasters-mapping-portal.html">Next &#8594;</a>
+            
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+</body>
+</html>
